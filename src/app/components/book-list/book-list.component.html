@@ -1,0 +1,27 @@
+@if (books().length) {
+  <div class="book-list" [@cardAnimation]>
+    @for (book of books(); track book.id; let i = $index) {
+      <book-card
+        [bookPreview]="book"
+        [index]="i"
+        (click)="openDetails(book)"
+      ></book-card>
+    }
+  </div>
+
+  <div class="add-book__wrapper">
+    <button
+      class="add-book__btn"
+      mat-fab
+      color="primary"
+      (click)="openAddForm()"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+} @else {
+  <img class="not-found" src="https://i.ibb.co/mvtWWLW/search-not-found.jpg" alt=""/>
+}
+
+
+

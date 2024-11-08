@@ -1,0 +1,83 @@
+.book-details {
+  display: flex;
+  padding: 20px;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: fadeIn 1s ease forwards;
+
+  &__wrapper {
+    width: 800px;
+    height: 400px;
+    background-color: #fff;
+  }
+
+  &__cover {
+    img {
+      display: block;
+      width: 280px;
+      height: 360px;
+    }
+  }
+
+  &__info {
+    margin: 10px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &__close {
+    cursor: pointer;
+
+    .mat-icon {
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .mat-icon:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__author, &__genre {
+    font-size: 14px;
+    color: grey;
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: 24px;
+    right: 20px;
+
+    button {
+      width: 80px;
+      transition: transform 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

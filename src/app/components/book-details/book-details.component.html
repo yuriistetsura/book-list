@@ -1,0 +1,42 @@
+@if (!isEdit) {
+  <div class="book-details__wrapper">
+    <div class="book-details">
+      <div class="book-details__cover">
+        <img [src]="book.coverImg" alt=""/>
+      </div>
+      <div class="book-details__info">
+        <div class="book-details__header">
+          <div class="book-details__title">{{ book.title }} ({{book.year}})</div>
+          <div class="book-details__close">
+            <mat-icon color="primary" mat-dialog-close>close</mat-icon>
+          </div>
+        </div>
+        <div class="book-details__description">
+          {{book.description}}
+        </div>
+        <div class="book-details__author">
+          Author: {{book.author}}
+        </div>
+        <div class="book-details__genre">
+          Genre: {{book.genre}}
+        </div>
+        <div class="book-details__footer">
+          <button
+            color="primary"
+            mat-flat-button
+            (click)="openBookDetailsForm()"
+          >
+            Edit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+} @else {
+  <book-details-form
+    [bookDetails]="book"
+    [isEdit]="true"
+  ></book-details-form>
+}
+
+

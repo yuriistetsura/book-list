@@ -1,0 +1,69 @@
+<div class="book-details-form__wrapper">
+  <div class="book-details-form__header">
+    <div class="book-details-form__title">{{isEdit ? "Edit Book" : "Add Book"}}</div>
+    <div class="book-details-form__close">
+      <mat-icon color="primary" mat-dialog-close>close</mat-icon>
+    </div>
+  </div>
+  <form [formGroup]="bookForm">
+    <div class="d-flex flex-wrap gap-3">
+      <mat-form-field class="book-details-form__input">
+        <mat-label>Title</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Please enter title"
+          formControlName="title"
+        >
+      </mat-form-field>
+      <mat-form-field class="book-details-form__input">
+        <mat-label>Author</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Please enter author"
+          formControlName="author"
+        >
+      </mat-form-field>
+      <mat-form-field class="book-details-form__input">
+        <mat-label>Year</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Please enter year"
+          formControlName="year"
+        >
+      </mat-form-field>
+      <mat-form-field class="book-details-form__input">
+        <mat-label>Genre</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Please enter genre"
+          formControlName="genre"
+        >
+      </mat-form-field>
+    </div>
+    <mat-form-field class="book-details-form__input book-details-form__description">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+  </form>
+  <div class="book-details-form__footer">
+    <button
+      color="warm"
+      mat-flat-button
+      mat-dialog-close
+    >
+      Cancel
+    </button>
+    <button
+      color="primary"
+      mat-flat-button
+      [class.disabled]="bookForm.invalid"
+      (click)="save()"
+    >
+      Save
+    </button>
+  </div>
+</div>

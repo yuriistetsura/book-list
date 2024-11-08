@@ -1,0 +1,24 @@
+<div class="book-card" [style.--i]="index">
+  <div class="book-card__cover">
+    <div class="book-card__book">
+      <div class="book-card__book-front">
+        <img class="book-card__img" [src]="bookPreview?.coverImg"/>
+      </div>
+      <div class="book-card__book-back"></div>
+      <div class="book-card__book-side"></div>
+    </div>
+  </div>
+  <div>
+    <div class="book-card__title">
+      {{bookPreview?.title}}
+    </div>
+    <div class="book-card__footer">
+      <div class="book-card__author">
+        {{bookPreview?.author}}
+      </div>
+      <div (click)="deleteBook(bookPreview?.id)">
+        <mat-icon>delete</mat-icon>
+      </div>
+    </div>
+  </div>
+</div>
